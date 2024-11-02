@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+{% block title %} Edit Student {% endblock title %}
+{% block main_content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 text-white">
+            <h2 class="mb-4 text-center">Edit Student Information</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="{{ form.name.value }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="roll" class="form-label">Roll No</label>  
+                    <input type="text" class="form-control" id="roll" name="roll" placeholder="Enter your roll number" value="{{ form.roll.value }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city" value="{{ form.city.value }}" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Save Changes</button>
+            </form>
+
+           
+        </div>
+    </div>
+</div>
+{% endblock main_content %}
